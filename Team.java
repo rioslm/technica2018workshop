@@ -1,14 +1,9 @@
 import java.util.ArrayList;
 
-/**
- * A team object.
- *
- * @author Mandy Pearce
-  *@version 11.10.18
- */
 public class Team{
-	public static String ID;
-	public static ArrayList<Person> members;
+	public String ID;
+	public ArrayList<Person> members;
+	private String tableId;
 
 	/**
 	 * Team constructor initializes the fields of the team object.
@@ -29,11 +24,26 @@ public class Team{
 	}
 
 	public void addMember(Person newMember){
-		if(members.size() <4){
+		if(members.size() < 4){
 			members.add(newMember);
 			newMember.setTeam(this.ID);
 		}
 		else
 			System.err.println("Only 4 members allowed in a team, there are already 4 members in this team.");
+	}
+	
+	public void setTableID(String id) {
+		this.tableId = id;
+	}
+	public String getTableID() {
+		return this.tableId;
+	}
+	
+	public String toString() {
+		String s = "";
+		for (Person p: members) {
+			s += p.name + " ";
+		}
+		return ID + " " + s;
 	}
 }

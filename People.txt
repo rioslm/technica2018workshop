@@ -1,0 +1,12 @@
+Jenn Rock	rockwejm@dukes.jmu.edu	757-758-4739	Maggie Duke	Va	ho	hi
+Maggie Duke	magdu@dukes.jmu.edu	123-456-7891	Jennifer Rockwell	Virginia Olchevski	hi	hi
+Virginia Olchevski	hi@dukes.edu	123-234-2345	Jennifer Rockwell	Maggie Duke	Someone	Other
+Who	sup@dukes	321-321-3214	JRock	VA	Maf	Marg
+Jenn Rock	rockwejm@dukes.jmu.edu	757-758-4739	Maggie Duke	Va	ho	hi
+Maggie Duke	magdu@dukes.jmu.edu	123-456-7891	Jennifer Rockwell	Virginia Olchevski	hi	hi
+Virginia Olchevski	hi@dukes.edu	123-234-2345	Jennifer Rockwell	Maggie Duke	Someone	Other
+Who	sup@dukes	321-321-3214	JRock	VA	Maf	Marg
+Jenn Rock	rockwejm@dukes.jmu.edu	757-758-4739	Maggie Duke	Va	ho	hi
+Maggie Duke	magdu@dukes.jmu.edu	123-456-7891	Jennifer Rockwell	Virginia Olchevski	hi	hi
+Virginia Olchevski	hi@dukes.edu	123-234-2345	Jennifer Rockwell	Maggie Duke	Someone	Other
+Who	sup@dukes	321-321-3214	JRock	VA	Maf	Marg

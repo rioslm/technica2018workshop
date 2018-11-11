@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * A table object.
  * @author Mandy Pearce
@@ -10,7 +8,7 @@ public class Table{
 	public static int size = 8;
 	public int emptySeats;
 	public String tableID;
-	public ArrayList<Team> teams; // array of teams will be size size
+	public Team[] teams = new Team[size]; // array of teams will be size size
 
 	/**
 	 * Table constructor initializes table object to empty.
@@ -18,14 +16,23 @@ public class Table{
 	public Table(String tableID){
 		this.emptySeats = size;
 		this.tableID = tableID;
-		this.teams = new ArrayList<Team>();
-	}
+		//this.teams = ;
 
-	/**
-	 * This method decreases the empty seat variable by one.
-	*/
-	private void setFillSeat(){
-		this.emptySeats--;
+	}
+	
+	public void setTeam(Team team) {
+		if (teams[0] == null) {
+			teams[0] = team;
+		} else {
+			teams[1] = team;
+		}
+	}
+	
+	public Team[] getTeam() {
+		return this.teams;
+	}
+	public String toString() {
+		return tableID;		
 	}
 
 }
