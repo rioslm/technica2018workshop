@@ -8,7 +8,7 @@ public class Person{
 	public String name;
 	public String email;
 	public String phoneNum;
-	public int teamID;
+	public String teamID;
 	// partners
 
 	/**
@@ -18,14 +18,14 @@ public class Person{
 	 * @param phoneNum the phone number of the person.
 	 * @param teamID of person, if no team set to 0
 	*/
-	public Person(String name, String email, String phoneNum, int teamID){
+	public Person(String name, String email, String phoneNum, String teamID){
 		this.name = name;
 		this.email = email;
 		this.phoneNum = phoneNum;
 		this.teamID = teamID;
 	}
 
-	private void setTeam(int team){
+	public void setTeam(String team){
 		this.teamID = team;
 	}
 

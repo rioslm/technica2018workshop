@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * A team object.
  *
@@ -26,12 +28,12 @@ public class Team{
 		members.add(member4);
 	}
 
-	private void addMember(Person newMember){
+	public void addMember(Person newMember){
 		if(members.size() <4){
 			members.add(newMember);
-			newMember.
+			newMember.setTeam(this.ID);
 		}
 		else
-			System.err.println("Only 4 members allowed in a team, there are already 4 members in this team.")
+			System.err.println("Only 4 members allowed in a team, there are already 4 members in this team.");
 	}
 }
