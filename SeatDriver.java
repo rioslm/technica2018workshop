@@ -2,12 +2,12 @@
 public class SeatDriver {
 
 	public static void main(String[] args) {
+
 		// tables per row
 		int TablesPerRow = 5;
 		int numTables = 125; // total number of tables
 		createTableIDs(numTables, TablesPerRow);
 	}
-
 	public static void createTableIDs(int numTables, int TablesPerRow) {
 		// array to hold table objects
 		Table[] TablesArray = new Table[numTables];
@@ -33,7 +33,6 @@ public class SeatDriver {
 		// TESTING
 		for (int i = 0; i < numTables; i++) {
 			 System.out.println(TablesArray[i].toString());
-
 		}
 	}
 }
