@@ -1,29 +1,39 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class SeatDriver {
 	private static final int TEAM_SIZE = 4;
+
 	public static void main(String[] args) {
-		// tables per row
 		int TablesPerRow = 5;
 		int numTables = 125; // total number of tables
-		// createTableIDs(numTables, TablesPerRow);
-		// getPeople(args[0]);
-
-		makeTeam(getPeople("/Users/Jenn/Desktop/technica/Technica/People.txt"),
+		ArrayList<Team> teams = makeTeam(getPeople("/Users/Jenn/Desktop/technica/Technica/People.txt"),
 				createTableIDs(numTables, TablesPerRow));
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter(new FileOutputStream("Hackers.txt", false));
+			for (Team t : teams) {
+				writer.println(t.toString());
+			}
+			writer.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public static Table[] createTableIDs(int numTables, int TablesPerRow) {
+	private static Table[] createTableIDs(int numTables, int TablesPerRow) {
 		// array to hold table objects
 		Table[] TablesArray = new Table[numTables];
 
 		// Abcs for Table ID
-		char abcs[] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
-				'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+		final char abcs[] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+				'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+
 		char letter = abcs[0]; // current Letter
 		int z = 0; // Position in array
 
@@ -37,7 +47,7 @@ public class SeatDriver {
 			}
 
 			// sets table to Letter + Number
-			TablesArray[i] = new Table(letter + Integer.toString(i % 5 + 1));
+			TablesArray[i] = new Table(letter + Integer.toString(i % TablesPerRow + 1));
 		}
 
 		// TESTING
@@ -47,7 +57,7 @@ public class SeatDriver {
 		return TablesArray;
 	}
 
-	public static ArrayList<Person> getPeople(String file) {
+	private static ArrayList<Person> getPeople(String file) {
 		ArrayList<Person> peeps = new ArrayList<>();
 
 		try {
@@ -62,7 +72,7 @@ public class SeatDriver {
 				// name, email, number, teamID
 
 				// create person 1
-
+				System.out.println(line);
 				peeps.add(new Person(tabbedLine[0], tabbedLine[1], tabbedLine[2], null));
 
 				// create his partners
@@ -81,40 +91,40 @@ public class SeatDriver {
 			}
 			buf.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		for (int i = 0; i < peeps.size(); i++) {
+		/*for (int i = 0; i < peeps.size(); i++) {
 			System.out.println(peeps.get(i).toString());
-		}
+		}*/
 		return peeps;
 	}
 
-	public static void makeTeam(ArrayList<Person> peeps, Table[] tables) {
+	private static ArrayList<Team> makeTeam(ArrayList<Person> peeps, Table[] tables) {
 		ArrayList<Team> teams = new ArrayList<>();
-		//for number of teams
+		// for number of teams
 		int table = 0;
 		for (int i = 0; i < (peeps.size() / TEAM_SIZE); i++) {
 			Team team = new Team(" " + i);
-			//gets people from peeps in multiples of 4
-			for (int z = i * 4; z < i * 4 + 4; z++) {
+			// gets people from peeps in multiples of 4
+			for (int z = i * TEAM_SIZE; z < i * TEAM_SIZE + TEAM_SIZE; z++) {
 				team.addMember(peeps.get(z));
+				peeps.get(z).setTeam(team.getTableID());
 			}
-			//Associates 
-			team.setTableID(tables[table].tableID);
-			//associates the team with the table
+			// Associates table with the team
+			team.setTableID(tables[table].getTableID());
+
+			// associates the team with the table
 			tables[table].setTeam(team);
-			teams.add(team);	//adds team to teams arraylist
-			System.out.println(table);
-			if (i % 2 != 0)
-			table++;
+			teams.add(team); // adds team to teams arraylist
+
+			if (i % Math.floor(tables[table].getSize() / TEAM_SIZE) != 0)
+				table++;
 		}
-		for (Team t: teams) {
+		/*for (Team t : teams) {
 			System.out.println(t.toString() + " " + t.getTableID());
-		}
-		
+		}*/
+		return teams;
 	}
 }

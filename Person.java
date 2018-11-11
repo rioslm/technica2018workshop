@@ -1,10 +1,8 @@
 public class Person {
-	public  String name;
-	public  String email;
-	public  String phoneNum;
-	public  String teamID;
-	public Person[] partners;
-	public boolean registered;
+	private  String name;
+	private  String email;
+	private  String phoneNum;
+	//private  String teamID;
 	
 
 	/**
@@ -23,21 +21,15 @@ public class Person {
 		this.name = name;
 		this.email = email;
 		this.phoneNum = phoneNum;
-		this.teamID = teamID;
-		this.partners = new Person[3];
-		this.registered = false;
+		//this.teamID = teamID;
 		
 	}
 	public void setTeam(String team){
-		this.teamID = team;
+		//this.teamID = team;
 	}
 	
-	public void setPartners(Person[] partners) {
-		this.partners = partners;
-	}
-	
-	public void register() {
-		this.registered = true;
+	public String getName() {
+		return name;
 	}
 	
 	public String toString() {

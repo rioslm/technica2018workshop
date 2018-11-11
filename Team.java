@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 
 public class Team{
-	public String ID;
-	public ArrayList<Person> members;
+	private String ID;
+	private ArrayList<Person> members;
 	private String tableId;
+	private static final int TEAM_SIZE = 4;
 
 	/**
 	 * Team constructor initializes the fields of the team object.
@@ -24,7 +25,7 @@ public class Team{
 	}
 
 	public void addMember(Person newMember){
-		if(members.size() < 4){
+		if(members.size() < TEAM_SIZE){
 			members.add(newMember);
 			newMember.setTeam(this.ID);
 		}
@@ -35,18 +36,25 @@ public class Team{
 	public void setTableID(String id) {
 		this.tableId = id;
 	}
+	
 	public String getTableID() {
 		return this.tableId;
 	}
+	
 	public ArrayList<Person> getMembers() {
 		return members;
 	}
 	
+	public int getSize() {
+		return TEAM_SIZE;
+	}
+	
 	public String toString() {
-		String s = "";
+		String s = this.tableId + "\t" + this.ID;
+		
 		for (Person p: members) {
-			s += p.name + " ";
+			s += "\t" + p.getName();
 		}
-		return ID + " " + s;
+		return s;
 	}
 }
