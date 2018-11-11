@@ -1,9 +1,10 @@
 public class Test{
+   
 	public static void main(String[] args){
 		String name = "Mandy";
 		String email = "pearceav@dukes.jmu.edu";
 		String phone = "8049828431";
-		int teamID = 0;
+		String teamID= "0";
 
 		Person hacker1 = new Person(name, email, phone, teamID);
 		System.out.println("we created a new person!");

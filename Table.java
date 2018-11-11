@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * A table object.
  * @author Mandy Pearce
@@ -7,8 +9,8 @@ public class Table{
 
 	public static int size = 8;
 	public int emptySeats;
-	public string tableID;
-	public  ArrayList<Team> teams; // array of teams will be size size
+	public String tableID;
+	public ArrayList<Team> teams; // array of teams will be size size
 
 	/**
 	 * Table constructor initializes table object to empty.
@@ -20,7 +22,7 @@ public class Table{
 	}
 
 	/**
-	 * this
+	 * This method decreases the empty seat variable by one.
 	*/
 	private void setFillSeat(){
 		this.emptySeats--;
