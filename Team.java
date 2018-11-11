@@ -38,6 +38,9 @@ public class Team{
 	public String getTableID() {
 		return this.tableId;
 	}
+	public ArrayList<Person> getMembers() {
+		return members;
+	}
 	
 	public String toString() {
 		String s = "";

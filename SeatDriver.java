@@ -37,7 +37,7 @@ public class SeatDriver {
 			}
 
 			// sets table to Letter + Number
-			TablesArray[i] = new Table(letter + Integer.toString(i + 1));
+			TablesArray[i] = new Table(letter + Integer.toString(i % 5 + 1));
 		}
 
 		// TESTING
@@ -109,9 +109,8 @@ public class SeatDriver {
 			tables[table].setTeam(team);
 			teams.add(team);	//adds team to teams arraylist
 			System.out.println(table);
-			if (i != 0 && table % 2 == 0) {
-				table++;
-			}
+			if (i % 2 != 0)
+			table++;
 		}
 		for (Team t: teams) {
 			System.out.println(t.toString() + " " + t.getTableID());
