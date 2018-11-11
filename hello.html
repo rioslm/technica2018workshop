@@ -2,6 +2,8 @@
 <html>
 <link rel="stylesheet" type="text/css" href="hello.css" />
 
+<head><script src="jquery-3.3.1.min.js"></script></head>
+
 <header id="challenge-header">
     <div class="row">
         ::before
@@ -22,22 +24,140 @@
 
 <img src="map.png" alt="Floor Map" usemap="#floormap">
 
+<script>
+    $( document ).ready(function() {
+		function lookUp(table) {// this is the exact path of the file on your computer
+
+            var file = "https://raw.githubusercontent.com/rioslm/technica2018workshop/master/Hackers.txt";
+
+            $.get(file, function(data) {
+                var items = data.split("\n");
+                alert(items[table]);
+            });
+
+        }
+
+        //document.getElementById("A1").addEventListener("click", lookUp(0));
+        $("#A1").on("click", function (e) {
+            e.preventDefault();
+            lookUp(0);
+            lookUp(1);
+
+        })
+
+        $("#A2").on("click", function (e) {
+            e.preventDefault();
+            lookUp(2);
+            lookUp(3);
+
+        })
+
+        $("#A3").on("click", function (e) {
+            e.preventDefault();
+            lookUp(4);
+            lookUp(5);
+
+        })
+
+        $("#A4").on("click", function (e) {
+            e.preventDefault();
+            lookUp(6);
+            lookUp(7);
+
+        })
+
+        $("#A5").on("click", function (e) {
+            e.preventDefault();
+            lookUp(8);
+            lookUp(9);
+
+        })
+
+        $("#B1").on("click", function (e) {
+            e.preventDefault();
+            lookUp(10);
+            lookUp(11);
+
+        })
+
+        $("#B2").on("click", function (e) {
+            e.preventDefault();
+            lookUp(12);
+            lookUp(13);
+
+        })
+
+        $("#B3").on("click", function (e) {
+            e.preventDefault();
+            lookUp(14);
+            lookUp(15);
+
+        })
+
+        $("#B4").on("click", function (e) {
+            e.preventDefault();
+            lookUp(16);
+            lookUp(17);
+
+        })
+
+        $("#B5").on("click", function (e) {
+            e.preventDefault();
+            lookUp(18);
+            lookUp(19);
+
+        })
+
+        $("#C1").on("click", function (e) {
+            e.preventDefault();
+            lookUp(19);
+            lookUp(20);
+
+        })
+
+        $("#C2").on("click", function (e) {
+            e.preventDefault();
+            lookUp(21);
+            lookUp(22);
+
+        })
+
+        $("#C3").on("click", function (e) {
+            e.preventDefault();
+            lookUp(23);
+            lookUp(24);
+
+        })
+
+        $("#C4").on("click", function (e) {
+            e.preventDefault();
+            lookUp(25);
+
+        })
+
+    } );
+
+
+
+
+	</script>
+
 <map name="floormap">
-    <area shape="rect" coords="522,433,501,415" alt="Table A1" href="">
-    <area shape="rect" coords="503,454,524,486" alt="Table A2" href="">
-    <area shape="rect" coords="501,494,522,521" alt="Table A3" href="">
-    <area shape="rect" coords="501,533,524,561" alt="Table A4" href="">
-    <area shape="rect" coords="501,574,520,600" alt="Table A5" href="">
-    <area shape="rect" coords="560,416,581,443" alt="Table B1" href="">
-    <area shape="rect" coords="563,454,582,482" alt="Table B2" href="">
-    <area shape="rect" coords="563,494,584,524" alt="Table B3" href="">
-    <area shape="rect" coords="561,533,582,565" alt="Table B4" href="">
-    <area shape="rect" coords="561,574,584,604" alt="Table B5" href="">
-    <area shape="rect" coords="623,411,644,445" alt="Table C1" href="">
-    <area shape="rect" coords="621,454,644,484" alt="Table C2" href="">
-    <area shape="rect" coords="621,493,646,524" alt="Table C3" href="">
-    <area shape="rect" coords="623,535,644,567" alt="Table C4" href="">
-    <area shape="rect" coords="625,574,644,606" alt="Table C5" href="">
+    <area shape="rect" coords="522,433,501,415" id="A1" alt="Table A1" href="">
+    <area shape="rect" coords="503,454,524,486" id="A2" alt="Table A2" href="">
+    <area shape="rect" coords="501,494,522,521" id="A3" alt="Table A3" href="">
+    <area shape="rect" coords="501,533,524,561" id="A4" alt="Table A4" href="">
+    <area shape="rect" coords="501,574,520,600" id="A5" alt="Table A5" href="">
+    <area shape="rect" coords="560,416,581,443" id="B1" alt="Table B1" href="">
+    <area shape="rect" coords="563,454,582,482" id="B2" alt="Table B2" href="">
+    <area shape="rect" coords="563,494,584,524" id="B3" alt="Table B3" href="">
+    <area shape="rect" coords="561,533,582,565" id="B3" alt="Table B4" href="">
+    <area shape="rect" coords="561,574,584,604" id="B4" alt="Table B5" href="">
+    <area shape="rect" coords="623,411,644,445" id="B5" alt="Table C1" href="">
+    <area shape="rect" coords="621,454,644,484" id="C1" alt="Table C2" href="">
+    <area shape="rect" coords="621,493,646,524" id="C2" alt="Table C3" href="">
+    <area shape="rect" coords="623,535,644,567" id="C3" alt="Table C4" href="">
+    <area shape="rect" coords="625,574,644,606" id="C4" alt="Table C5" href="">
 
 </map>
 

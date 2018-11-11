@@ -1,0 +1,46 @@
+<html>
+<head>
+	Test program
+	</head>
+	<input type='file' accept='text/plain' onchange='openFile(event)'><br>
+	<img id='output'>
+	<script>
+		// this is the exact path of the file on your computer
+		var file= "file:///C:/Users/mvpea/Documents/WIT/Technicia/teachers.txt"
+  		var rawFile = new XMLHttpRequest();
+    	rawFile.open("GET", file, false);
+    	rawFile.onreadystatechange = function ()
+    	{
+        	if(rawFile.readyState === 4)
+        	{
+            	if(rawFile.status === 200 || rawFile.status == 0)
+            	{
+                	var allText = rawFile.responseText;
+                	alert(allText); //alert prints
+            	}
+        	}
+    	}
+    	rawFile.send(null);
+	</script>
+
+	<body>
+<!-- 		<%@page import="java.util.*"%>
+		<div>Hello World</div>
+
+		<% double num = Math.random(); 
+		if (num > 0.95) {  %>
+
+		<h2> Your number is bigger than 0.95!! its <%= num %> !</h2>
+
+		<% } else {
+
+		%> <h2>Your number is smaller than 0.95... its <%= num %></h2>
+		<%
+		} %> -->
+
+		<p>Hello World!
+		</p>
+		
+
+	</body>
+</html>
